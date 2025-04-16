@@ -1,6 +1,8 @@
 # FULL_ADDER_SUBTRACTOR
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
+## Developed by: R N Somnath
+## Register no.: 212224240158
 
 **AIM:**
 
@@ -37,19 +39,58 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+## full adder
+![image](https://github.com/user-attachments/assets/a5d9c29c-033e-4798-838a-bb4061f4ee4f)
+## full subractor
+![image](https://github.com/user-attachments/assets/71e08378-5b0a-43f2-b320-37a69daaf003)
+
 
 **Procedure**
 
-Write the detailed procedure here
+**Full Adder:**
+1.Open Quartus II and create a new project.
+2.Use schematic design entry to draw the full adder circuit. 
+3.The circuit consists of XOR, AND, and OR gates. 
+4.Compile the design, verify its functionality through simulation. 
+5.Implement the design on the target device and program it.
+
+**Full Subtractor:** 
+1.Follow the same steps as for the full adder. 
+2.Draw the full subtractor circuit using schematic design. 
+3.The circuit includes XOR, AND, OR gates to perform subtraction. 
+4.Compile, simulate, implement, and program the design similarly to the full adder.
 
 **Program:**
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
+```
+module faexp(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+FULL SUBTRACTOR:
+module fsexp(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+endmodule
 
+```
 **RTL Schematic**
+## full adder
+![image](https://github.com/user-attachments/assets/35170355-03af-4a5e-b0a1-e6e9e927cd3c)
+## full subractor
+![image](https://github.com/user-attachments/assets/1781cac4-8935-48d9-b3b5-60d84192f601)
 
 **Output Timing Waveform**
+## full adder
+![image](https://github.com/user-attachments/assets/bcb67efc-8b75-4b39-8ca8-bccbf06f05b7)
+## full subractor
+![image](https://github.com/user-attachments/assets/27278e0a-9ff9-4ca8-95de-db131838ad6b)
 
 **Result:**
 
